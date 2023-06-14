@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BDE64D482A3220400041420C /* Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Store.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDE64D482A3220400041420C /* GBShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE64D4B2A3220400041420C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDE64D4D2A3220400041420C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BDE64D4F2A3220400041420C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		BDE64D492A3220400041420C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BDE64D482A3220400041420C /* Store.app */,
+				BDE64D482A3220400041420C /* GBShop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,10 +66,6 @@
 				BDE64D652A3221A10041420C /* App */,
 				BDE64D4B2A3220400041420C /* AppDelegate.swift */,
 				BDE64D4D2A3220400041420C /* SceneDelegate.swift */,
-				BDE64D4F2A3220400041420C /* ViewController.swift */,
-				BDE64D512A3220400041420C /* Main.storyboard */,
-				BDE64D592A3220410041420C /* LaunchScreen.storyboard */,
-				BDE64D5C2A3220410041420C /* Info.plist */,
 				BDE64D542A3220400041420C /* Store.xcdatamodeld */,
 			);
 			path = Store;
@@ -78,6 +74,7 @@
 		BDE64D622A3221490041420C /* Environments */ = {
 			isa = PBXGroup;
 			children = (
+				BDE64D5C2A3220410041420C /* Info.plist */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -85,6 +82,7 @@
 		BDE64D632A3221780041420C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BDE64D592A3220410041420C /* LaunchScreen.storyboard */,
 				BDE64D572A3220410041420C /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -111,6 +109,8 @@
 		BDE64D662A3221F00041420C /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				BDE64D4F2A3220400041420C /* ViewController.swift */,
+				BDE64D512A3220400041420C /* Main.storyboard */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -153,9 +153,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BDE64D472A3220400041420C /* Store */ = {
+		BDE64D472A3220400041420C /* GBShop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BDE64D5F2A3220410041420C /* Build configuration list for PBXNativeTarget "Store" */;
+			buildConfigurationList = BDE64D5F2A3220410041420C /* Build configuration list for PBXNativeTarget "GBShop" */;
 			buildPhases = (
 				BDE64D442A3220400041420C /* Sources */,
 				BDE64D452A3220400041420C /* Frameworks */,
@@ -165,9 +165,9 @@
 			);
 			dependencies = (
 			);
-			name = Store;
+			name = GBShop;
 			productName = Store;
-			productReference = BDE64D482A3220400041420C /* Store.app */;
+			productReference = BDE64D482A3220400041420C /* GBShop.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -185,7 +185,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BDE64D432A3220400041420C /* Build configuration list for PBXProject "Store" */;
+			buildConfigurationList = BDE64D432A3220400041420C /* Build configuration list for PBXProject "GBShop" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -198,7 +198,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BDE64D472A3220400041420C /* Store */,
+				BDE64D472A3220400041420C /* GBShop */,
 			);
 		};
 /* End PBXProject section */
@@ -423,7 +423,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BDE64D432A3220400041420C /* Build configuration list for PBXProject "Store" */ = {
+		BDE64D432A3220400041420C /* Build configuration list for PBXProject "GBShop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BDE64D5D2A3220410041420C /* Debug */,
@@ -432,7 +432,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BDE64D5F2A3220410041420C /* Build configuration list for PBXNativeTarget "Store" */ = {
+		BDE64D5F2A3220410041420C /* Build configuration list for PBXNativeTarget "GBShop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BDE64D602A3220410041420C /* Debug */,
