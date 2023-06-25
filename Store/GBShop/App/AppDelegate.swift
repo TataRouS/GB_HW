@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let auth = requestFactory.makeAuthRequestFatory()
+        let auth = requestFactory.makeAuthRequestFactory()
         auth.login(userName: "Somebody", password: "mypassword") { response in
             switch response.result {
             case .success(let login):
@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
-        let logout = requestFactory.makeLogoutRequestFatory()
+        let logout = requestFactory.makeLogoutRequestFactory()
         logout.logout(id: 123) { response in
             switch response.result {
             case .success(let logout):
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
-        let registration = requestFactory.makeRegistrationRequestFatory()
+        let registration = requestFactory.makeRegistrationRequestFactory()
         let registrationData = RegistrationData(id: 123,
                                                 username: "Somebody",
                                                 password: "mypassword",
@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
-        let updateUser = requestFactory.makeUpdateUserRequestFatory()
+        let updateUser = requestFactory.makeUpdateUserRequestFactory()
         let updateUserData = UpdateUserData(id: 123, username: "Somebody",
                                             password: "mypassword",
                                             email: "some@some.ru",
@@ -71,6 +71,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
+        let catalog = requestFactory.makeCatalogRequestFactory()
+
+        catalog.getCatalog(pageNumber: 1, categoryId: 1) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
+        let product = requestFactory.makeProductRequestFactory()
+        product.getProduct(productId: 1) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
         return true
     }
 
