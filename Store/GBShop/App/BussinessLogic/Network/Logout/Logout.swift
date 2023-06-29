@@ -12,8 +12,11 @@ class Logout: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
-
+    let baseUrl = URL(string:"http://127.0.0.1:8080/")!
+    
+   /* let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+   */
+    
     init(
         errorParser: AbstractErrorParser,
         sessionManager: Session,
@@ -34,7 +37,7 @@ extension Logout: LogoutRequestFactory {
 extension Logout {
     struct LogoutRequest: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
+        let method: HTTPMethod = .post
         let path: String = "logout.json"
 
         let id: Int
