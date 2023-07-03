@@ -45,12 +45,30 @@ class RequestFactory {
     }
     
     func makeCatalogRequestFactory() -> CatalogRequestFactory {
-            let errorParser = makeErrorParser()
-            return Catalog(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
-        }
+        let errorParser = makeErrorParser()
+        return Catalog(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    
+    func makeProductRequestFactory() -> ProductRequestFactory {
+        let errorParser = makeErrorParser()
+        return Product(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
 
-        func makeProductRequestFactory() -> ProductRequestFactory {
-            let errorParser = makeErrorParser()
-            return Product(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
-        }
+   func makeAddReviewRequestFactory() -> AddReviewRequestFactory {
+       let errorParser = makeErrorParser()
+       return AddReview(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+   }
+
+   func makeRemoveReviewRequestFactory() -> RemoveReviewRequestFactory {
+       let errorParser = makeErrorParser()
+       return RemoveReview(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+   }
+
+   func makeAllReviewsRequestFactory() -> AllReviewsRequestFactory {
+       let errorParser = makeErrorParser()
+       return AllReviews(errorParser: errorParser,
+                         sessionManager: commonSession,
+                         queue: sessionQueue)
+   }
+    
 }
