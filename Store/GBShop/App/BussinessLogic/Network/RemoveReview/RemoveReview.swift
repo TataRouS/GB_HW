@@ -37,7 +37,7 @@ extension RemoveReview {
     struct RemoveReviewRequest: RequestRouter {
         var baseUrl: URL
         var method: HTTPMethod = .post
-        var path: String = "removeReview"
+        var path: String = "removeReview.json"
 
         var idComment: Int
 

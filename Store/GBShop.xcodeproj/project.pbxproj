@@ -308,8 +308,8 @@
 		BDDC01362A3B541100E9EB4D /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				BDDC013E2A3B5AB700E9EB4D /* Registration.swift */,
 				BDDC01402A3B5B4100E9EB4D /* RegistrationRequestFactory.swift */,
+				BDDC013E2A3B5AB700E9EB4D /* Registration.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";

@@ -11,12 +11,14 @@ struct AllReviewsResult: Codable {
     let idReview: Int
     let idProduct: Int
     let text: String
-    let user: User
+    let user: Int
+    let errorMessage: String?
 
     enum CodingKeys: String, CodingKey {
         case idReview = "id_review"
         case idProduct = "id_product"
         case text = "text"
-        case user = "created_by"
+        case user = "id_user"
+        case errorMessage = "errorMessage"
     }
 }

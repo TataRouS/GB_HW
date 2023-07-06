@@ -37,14 +37,15 @@ extension AllReviews: AllReviewsRequestFactory {
 extension AllReviews {
     struct AllReviewsRequest: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "allReviews"
+        let method: HTTPMethod = .post
+        
+        let path: String = "getReviews.json"
 
         var productId: Int
 
         var parameters: Parameters? {
             return [
-                "product_id": productId
+                "id_product": productId
             ]
         }
     }

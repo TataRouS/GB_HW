@@ -98,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   case .success(let result):
                       print(result)
                   case .failure(let error):
-                      print(error.localizedDescription)
+                      print(error.localizedDescription + "get addReview")
                   }
               }
         
@@ -108,7 +108,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                    case .success(let result):
                        print(result)
                    case .failure(let error):
-                       print(error.localizedDescription)
+                       print(error.localizedDescription + "get removeReview")
+                       
                    }
                }
                let allReview = requestFactory.makeAllReviewsRequestFactory()
@@ -117,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                    case .success(let result):
                        print(result)
                    case .failure(let error):
-                       print(error.localizedDescription)
+                       print(error.localizedDescription + "get allReview")
                    }
                }
         

@@ -40,7 +40,7 @@ extension AddReview {
     struct AddReviewRequest: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "addReview"
+        let path: String = "addReview.json"
 
         var idUser: Int
         var text: String
