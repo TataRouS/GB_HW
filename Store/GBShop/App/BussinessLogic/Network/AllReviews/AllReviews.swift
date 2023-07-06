@@ -1,15 +1,14 @@
 //
-//  Product.swift
+//  AllReviews.swift
 //  GBShop
 //
-//  Created by Nata Kuznetsova on 25.06.2023.
+//  Created by Nata Kuznetsova on 03.07.2023.
 //
 
 import Foundation
 import Alamofire
 
-class Product: AbstractRequestFactory {
-
+class AllReviews: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
@@ -25,18 +24,22 @@ class Product: AbstractRequestFactory {
     }
 }
 
-extension Product: ProductRequestFactory {
-    func getProduct(productId: Int, completionHandler: @escaping (AFDataResponse<ProductResult>) -> Void) {
-        let requestModel = ProductRequest(baseUrl: baseUrl, productId: productId)
-        self.request(request: requestModel, completionHandler: completionHandler)
+extension AllReviews: AllReviewsRequestFactory {
+    func getAllReviews(productId: Int,
+                       completionHandler: @escaping (AFDataResponse<[AllReviewsResult]>) -> Void) {
+        let requestModel = AllReviewsRequest(baseUrl: baseUrl,
+                                             productId: productId)
+        self.request(request: requestModel,
+                     completionHandler: completionHandler)
     }
 }
 
-extension Product {
-    struct ProductRequest: RequestRouter {
+extension AllReviews {
+    struct AllReviewsRequest: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "getGoodById.json"
+        
+        let path: String = "getReviews.json"
 
         var productId: Int
 

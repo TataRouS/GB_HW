@@ -92,6 +92,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        let addReview = requestFactory.makeAddReviewRequestFactory()
+              addReview.getAddReview(idUser: 123, text: "Текст отзыва") { response in
+                  switch response.result {
+                  case .success(let result):
+                      print(result)
+                  case .failure(let error):
+                      print(error.localizedDescription + "get addReview")
+                  }
+              }
+        
+        let removeReview = requestFactory.makeRemoveReviewRequestFactory()
+               removeReview.getRemoveReview(idComment: 123) { response in
+                   switch response.result {
+                   case .success(let result):
+                       print(result)
+                   case .failure(let error):
+                       print(error.localizedDescription + "get removeReview")
+                       
+                   }
+               }
+               let allReview = requestFactory.makeAllReviewsRequestFactory()
+               allReview.getAllReviews(productId: 1) { response in
+                   switch response.result {
+                   case .success(let result):
+                       print(result)
+                   case .failure(let error):
+                       print(error.localizedDescription + "get allReview")
+                   }
+               }
+        
         return true
     }
 
