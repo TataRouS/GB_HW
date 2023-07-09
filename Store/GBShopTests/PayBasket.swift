@@ -1,32 +1,33 @@
 //
-//  AllReviewsTests.swift
+//  PayBasket.swift
 //  GBShopTests
 //
-//  Created by Nata Kuznetsova on 03.07.2023.
+//  Created by Nata Kuznetsova on 07.07.2023.
 //
 
 import XCTest
 
+
 @testable import GBShop
 
-class AllReviewsTests: XCTestCase {
-    let expectation = XCTestExpectation(description: "AllReviews")
+class PayBasketTests: XCTestCase {
+    let expectation = XCTestExpectation(description: "PayBasket")
 
     var requestFactory: RequestFactory!
-    var allReviews: AllReviewsRequestFactory!
+    var payBasket: PayBasketRequestFactory!
 
     override func setUpWithError() throws {
         requestFactory = RequestFactory()
-        allReviews = requestFactory.makeAllReviewsRequestFactory()
+        payBasket = requestFactory.makePayBasketRequestFactory()
     }
 
     override func tearDownWithError() throws {
         requestFactory = nil
-        allReviews = nil
+        payBasket = nil
     }
 
-    func testShouldGetAllReviews() throws {
-        allReviews.getAllReviews(productId: 1) { response in
+    func testShouldPayBasket() throws {
+        payBasket.payBasket(userId: 1) { response in
             switch response.result {
             case .success(_): break
             case .failure:
@@ -35,4 +36,5 @@ class AllReviewsTests: XCTestCase {
             self.expectation.fulfill()
         }
     }
+
 }

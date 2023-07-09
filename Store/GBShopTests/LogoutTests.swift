@@ -37,10 +37,4 @@ class LogoutTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-
-    func testPerformanceExample() throws {
-        self.measure {
-        }
-    }
-
 }

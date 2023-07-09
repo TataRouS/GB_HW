@@ -1,32 +1,31 @@
 //
-//  AllReviewsTests.swift
+//  DeleteProductFromBasketTests.swift
 //  GBShopTests
 //
-//  Created by Nata Kuznetsova on 03.07.2023.
+//  Created by Nata Kuznetsova on 06.07.2023.
 //
 
 import XCTest
-
 @testable import GBShop
 
-class AllReviewsTests: XCTestCase {
-    let expectation = XCTestExpectation(description: "AllReviews")
+class DeleteProductFromBasketTests: XCTestCase {
+    let expectation = XCTestExpectation(description: "DeleteProductFromBasket")
 
     var requestFactory: RequestFactory!
-    var allReviews: AllReviewsRequestFactory!
+    var deleteProductFromBasket: DeleteProductFromBasketRequestFactory!
 
     override func setUpWithError() throws {
         requestFactory = RequestFactory()
-        allReviews = requestFactory.makeAllReviewsRequestFactory()
+        deleteProductFromBasket = requestFactory.makeDeleteProductFromBasket()
     }
 
     override func tearDownWithError() throws {
         requestFactory = nil
-        allReviews = nil
+        deleteProductFromBasket = nil
     }
 
     func testShouldGetAllReviews() throws {
-        allReviews.getAllReviews(productId: 1) { response in
+        deleteProductFromBasket.deleteProductFromBasket(productId: 1) { response in
             switch response.result {
             case .success(_): break
             case .failure:
