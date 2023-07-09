@@ -5,7 +5,7 @@
 //  Created by Nata Kuznetsova on 06.07.2023.
 //
 
-import Foundation
+import XCTest
 @testable import GBShop
 
 class DeleteProductFromBasketTests: XCTestCase {
@@ -32,11 +32,6 @@ class DeleteProductFromBasketTests: XCTestCase {
                 XCTFail()
             }
             self.expectation.fulfill()
-        }
-    }
-
-    func testPerformanceExample() throws {
-        self.measure {
         }
     }
 }

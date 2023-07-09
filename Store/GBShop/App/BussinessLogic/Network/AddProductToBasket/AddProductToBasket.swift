@@ -39,7 +39,7 @@ extension AddProductToBasket {
     struct AddProductToBasketRequest: RequestRouter {
         var baseUrl: URL
         var method: HTTPMethod = .post
-        var path: String = "addToBasket"
+        var path: String = "addToBasket.json"
 
         var productId: Int
         var quantity: Int

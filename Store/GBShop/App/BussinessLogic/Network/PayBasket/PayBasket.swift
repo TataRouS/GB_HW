@@ -1,14 +1,14 @@
 //
-//  DeleteProductFromBasket.swift
+//  PayBasket.swift
 //  GBShop
 //
-//  Created by Nata Kuznetsova on 06.07.2023.
+//  Created by Nata Kuznetsova on 07.07.2023.
 //
 
 import Foundation
 import Alamofire
 
-class DeleteProductFromBasket: AbstractRequestFactory {
+class PayBasket: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
@@ -24,26 +24,26 @@ class DeleteProductFromBasket: AbstractRequestFactory {
     }
 }
 
-extension DeleteProductFromBasket: DeleteProductFromBasketRequestFactory {
-    func deleteProductFromBasket(productId: Int, completionHandler: @escaping (AFDataResponse<DeleteProductFromBasketResult>) -> Void) {
-        let requestModel = DeleteProductFromBasketRequest(baseUrl:
-                                                            baseUrl, productId: productId)
+extension PayBasket: PayBasketRequestFactory {
+    func payBasket(userId: Int, completionHandler: @escaping (AFDataResponse<PayBasketResult>) -> Void) {
+        let requestModel = PayBasketRequest(baseUrl: baseUrl,
+                                            userId: userId)
         self.request(request: requestModel,
                      completionHandler: completionHandler)
     }
 }
 
-extension DeleteProductFromBasket {
-    struct DeleteProductFromBasketRequest: RequestRouter {
+extension PayBasket {
+    struct PayBasketRequest: RequestRouter {
         var baseUrl: URL
         var method: HTTPMethod = .post
-        var path: String = "deleteFromBasket.json"
+        var path: String = "payBasket.json"
 
-        var productId: Int
+        var userId: Int
 
         var parameters: Parameters? {
             return [
-                "id_product": productId
+                "id_user": userId
             ]
         }
     }

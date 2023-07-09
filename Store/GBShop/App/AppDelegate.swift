@@ -128,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 case .success(let result):
                     print(result)
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    print(error.localizedDescription + "addToBasket")
                 }
             }
 
@@ -138,10 +138,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 case .success(let result):
                     print(result)
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    print(error.localizedDescription + "removefromBasket")
                 }
             }
         
+        let payBasket = requestFactory.makePayBasketRequestFactory()
+             payBasket.payBasket(userId: 1) { response in
+                 switch response.result {
+                 case .success(let result):
+                     print(result)
+                 case .failure(let error):
+                     print(error.localizedDescription + "payBasket")
+                 }
+             }
+
         return true
     }
 
