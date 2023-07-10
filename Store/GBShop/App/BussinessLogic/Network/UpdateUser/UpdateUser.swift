@@ -26,7 +26,7 @@ class UpdateUser: AbstractRequestFactory {
 
 extension UpdateUser: UpdateUserRequestFactory {
 
-    func updateUser(updateUserData: UpdateUserData, completionHandler: @escaping (AFDataResponse<UpdateUserResult>) -> Void) {
+    func updateUser(updateUserData: UserData, completionHandler: @escaping (AFDataResponse<UpdateUserResult>) -> Void) {
         let requestModel = UpdateUserRequest(baseUrl: baseUrl, updateUserData: updateUserData)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
@@ -38,7 +38,7 @@ extension UpdateUser {
         let method: HTTPMethod = .post
         let path: String = "changeUserData.json"
 
-        let updateUserData: UpdateUserData
+        let updateUserData: UserData
         var parameters: Parameters? {
             return [
                 "id_user" : updateUserData.id,
