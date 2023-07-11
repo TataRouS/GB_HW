@@ -91,10 +91,10 @@ class UserInformationViewController: UIViewController {
     }
 
     private func addTextToLabel() {
-        usernameLabel.text = "\(username ?? "Nikolas Sarkozi")"
-        emailLabel.text = "Email - \(email ?? "sarkozi@bk.ru")"
-        bioLabel.text = "Bio - \(bio ?? " My name's Sarkozi. i love your application, it's really usefull")"
-        genderLabel.text = "Gender -\(gender ?? "male")"
+        usernameLabel.text = "\(username ?? "Nata Kuznetsova")"
+        emailLabel.text = "Email - \(email ?? "geekbrains@gb.ru")"
+        bioLabel.text = "Bio - \(bio ?? " My name's Nata. i love this application, it's really usefull")"
+        genderLabel.text = "Gender -\(gender ?? "Female")"
         creditCardDetailsLabel.text = "\(creditCard ?? "123-12-12-12345")"
     }
 }
