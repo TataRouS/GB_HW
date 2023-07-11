@@ -9,5 +9,5 @@ import Foundation
 import Alamofire
 
 protocol UpdateUserRequestFactory {
-    func updateUser(updateUserData: UpdateUserData, completionHandler: @escaping (AFDataResponse<UpdateUserResult>) -> Void)
+    func updateUser(updateUserData: UserData, completionHandler: @escaping (AFDataResponse<UpdateUserResult>) -> Void)
 }
