@@ -26,11 +26,11 @@ class LoginViewController: UIViewController {
         return label
     }()
 
-    private let loginButton = UIButton(title: "Log in",
+    private let loginButton = ExtendedButton(title: "Log in",
                                        backgroundColor: Colors.whiteColor,
                                        titleColor: .black,
                                        isShadow: true)
-    private let registrationButton = UIButton(title: "Sign up",
+    private let registrationButton = ExtendedButton(title: "Sign up",
                                               backgroundColor: Colors.mainBlueColor,
                                               titleColor: Colors.whiteColor,
                                               isShadow: false)
@@ -137,13 +137,14 @@ extension LoginViewController {
         }
     }
 
-    private func pushProfileEditorViewController() {
+ /*private func pushProfileEditorViewController() {
         let toVC = ProfileEditorViewController()
         toVC.isRegistration = true
         self.navigationController?.pushViewController(toVC, animated: true)
-    }
+    } */
 }
 
+    
 // MARK: - Setup observers and gestures recognizer
 extension LoginViewController {
     private func addTapGestureRecognizer() {
@@ -241,6 +242,12 @@ extension LoginViewController {
             self.activityView.stopAnimating()
         }
     }
+    
+    private func pushProfileEditorViewController() {
+         let toVC = ProfileEditorViewController()
+         toVC.isRegistration = true
+         self.navigationController?.pushViewController(toVC, animated: true)
+     }
 
     @objc private func registrationButtonTapped() {
         pushProfileEditorViewController()

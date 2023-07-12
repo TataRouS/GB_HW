@@ -55,6 +55,12 @@
 		BD1053282A58AA00009D75F3 /* PayBasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1053272A58AA00009D75F3 /* PayBasketRequestFactory.swift */; };
 		BD10532A2A58AA77009D75F3 /* PayBasketResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1053292A58AA77009D75F3 /* PayBasketResult.swift */; };
 		BD10532C2A58AAB8009D75F3 /* PayBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD10532B2A58AAB8009D75F3 /* PayBasket.swift */; };
+		BDB307842A5DF31B007FEA10 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307832A5DF31B007FEA10 /* ProductListViewController.swift */; };
+		BDB307862A5DF393007FEA10 /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307852A5DF393007FEA10 /* ProductCategory.swift */; };
+		BDB307892A5DF43B007FEA10 /* ConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307882A5DF43B007FEA10 /* ConfigCell.swift */; };
+		BDB3078C2A5DF47D007FEA10 /* ProductListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB3078B2A5DF47D007FEA10 /* ProductListCollectionViewCell.swift */; };
+		BDB3078E2A5DF4C4007FEA10 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB3078D2A5DF4C4007FEA10 /* ProductListTableViewCell.swift */; };
+		BDB307902A5DF51B007FEA10 /* CustomGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB3078F2A5DF51B007FEA10 /* CustomGradientView.swift */; };
 		BDDC012E2A3B4E9600E9EB4D /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDC012D2A3B4E9600E9EB4D /* Auth.swift */; };
 		BDDC01302A3B4EE400E9EB4D /* AuthRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDC012F2A3B4EE400E9EB4D /* AuthRequestFactory.swift */; };
 		BDDC01332A3B4F4D00E9EB4D /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDC01322A3B4F4D00E9EB4D /* Logout.swift */; };
@@ -146,6 +152,12 @@
 		BD1053272A58AA00009D75F3 /* PayBasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketRequestFactory.swift; sourceTree = "<group>"; };
 		BD1053292A58AA77009D75F3 /* PayBasketResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketResult.swift; sourceTree = "<group>"; };
 		BD10532B2A58AAB8009D75F3 /* PayBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasket.swift; sourceTree = "<group>"; };
+		BDB307832A5DF31B007FEA10 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		BDB307852A5DF393007FEA10 /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
+		BDB307882A5DF43B007FEA10 /* ConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCell.swift; sourceTree = "<group>"; };
+		BDB3078B2A5DF47D007FEA10 /* ProductListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDB3078D2A5DF4C4007FEA10 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
+		BDB3078F2A5DF51B007FEA10 /* CustomGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGradientView.swift; sourceTree = "<group>"; };
 		BDDC012D2A3B4E9600E9EB4D /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		BDDC012F2A3B4EE400E9EB4D /* AuthRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactory.swift; sourceTree = "<group>"; };
 		BDDC01322A3B4F4D00E9EB4D /* Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
@@ -223,6 +235,7 @@
 				BD0278382A5C53BE0058A038 /* ProfileEditorViewController.swift */,
 				BD02783A2A5C54120058A038 /* UserInformationViewController.swift */,
 				BD02783C2A5C544B0058A038 /* MainTabBarController.swift */,
+				BDB307832A5DF31B007FEA10 /* ProductListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				BD02783E2A5C550C0058A038 /* Colors.swift */,
+				BDB307852A5DF393007FEA10 /* ProductCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,8 +252,10 @@
 		BD0278332A5C25390058A038 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BDB3078A2A5DF45B007FEA10 /* Cells */,
 				BD0278402A5C555A0058A038 /* BlurredLabel.swift */,
 				BD0278422A5C55820058A038 /* GBShopStandardTextField.swift */,
+				BDB3078F2A5DF51B007FEA10 /* CustomGradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -412,6 +428,23 @@
 			path = PayBasket;
 			sourceTree = "<group>";
 		};
+		BDB307872A5DF405007FEA10 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BDB307882A5DF43B007FEA10 /* ConfigCell.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BDB3078A2A5DF45B007FEA10 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BDB3078B2A5DF47D007FEA10 /* ProductListCollectionViewCell.swift */,
+				BDB3078D2A5DF4C4007FEA10 /* ProductListTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BDDC012C2A3B4E7500E9EB4D /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +597,7 @@
 		BDE64D662A3221F00041420C /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				BDB307872A5DF405007FEA10 /* Protocols */,
 				BD0278442A5C56960058A038 /* Extensions */,
 				BD0278312A5C23F90058A038 /* Controllers */,
 				BD0278322A5C252E0058A038 /* Model */,
@@ -769,6 +803,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDB307842A5DF31B007FEA10 /* ProductListViewController.swift in Sources */,
 				BDDC01592A3B60E500E9EB4D /* AbstractRequestFactory.swift in Sources */,
 				BDDC015B2A3B610D00E9EB4D /* CustomDecodableSerializer.swift in Sources */,
 				BD02783D2A5C544B0058A038 /* MainTabBarController.swift in Sources */,
@@ -792,6 +827,7 @@
 				BD1053262A58A9CD009D75F3 /* PayBasket.swift in Sources */,
 				BDDC01412A3B5B4100E9EB4D /* RegistrationRequestFactory.swift in Sources */,
 				BD0278412A5C555A0058A038 /* BlurredLabel.swift in Sources */,
+				BDB307892A5DF43B007FEA10 /* ConfigCell.swift in Sources */,
 				BDDC01352A3B53E100E9EB4D /* LogoutRequestFactory.swift in Sources */,
 				BDDC014D2A3B5D7F00E9EB4D /* User.swift in Sources */,
 				BD1053052A53112F009D75F3 /* AddReviewRequestFactory.swift in Sources */,
@@ -799,6 +835,7 @@
 				BD1052C82A489923009D75F3 /* Catalog.swift in Sources */,
 				BDDC012E2A3B4E9600E9EB4D /* Auth.swift in Sources */,
 				BD0278372A5C53820058A038 /* LoginViewController.swift in Sources */,
+				BDB3078E2A5DF4C4007FEA10 /* ProductListTableViewCell.swift in Sources */,
 				BDE64D502A3220400041420C /* ViewController.swift in Sources */,
 				BD10531F2A5725F6009D75F3 /* AddProductToBasketRequestFactory.swift in Sources */,
 				BDDC01572A3B5E5E00E9EB4D /* UpdateUserResult.swift in Sources */,
@@ -817,10 +854,13 @@
 				BD1052C52A461B70009D75F3 /* AbstractErrorParser.swift in Sources */,
 				BD1052CF2A4899ED009D75F3 /* ProductRequestFactory.swift in Sources */,
 				BD1053232A572775009D75F3 /* DeleteProductFromBasketRequestFactory.swift in Sources */,
+				BDB3078C2A5DF47D007FEA10 /* ProductListCollectionViewCell.swift in Sources */,
 				BDDC013F2A3B5AB700E9EB4D /* Registration.swift in Sources */,
+				BDB307902A5DF51B007FEA10 /* CustomGradientView.swift in Sources */,
 				BDDC015F2A3B613E00E9EB4D /* RequestRouter.swift in Sources */,
 				BDE64D4C2A3220400041420C /* AppDelegate.swift in Sources */,
 				BDE64D4E2A3220400041420C /* SceneDelegate.swift in Sources */,
+				BDB307862A5DF393007FEA10 /* ProductCategory.swift in Sources */,
 				BDDC01472A3B5C3200E9EB4D /* UpdateUserRequestFactory.swift in Sources */,
 				BD0278392A5C53BE0058A038 /* ProfileEditorViewController.swift in Sources */,
 				BDDC015D2A3B612000E9EB4D /* ErrorParser.swift in Sources */,
