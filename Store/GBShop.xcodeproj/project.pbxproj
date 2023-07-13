@@ -63,6 +63,8 @@
 		BD209AB52A608A740098E4C7 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AB42A608A740098E4C7 /* UserInformationViewController.swift */; };
 		BD209AB72A608C3F0098E4C7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AB62A608C3F0098E4C7 /* Colors.swift */; };
 		BD209AB92A6093010098E4C7 /* GBShopStandartTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AB82A6093010098E4C7 /* GBShopStandartTextField.swift */; };
+		BD209ABB2A609E720098E4C7 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209ABA2A609E720098E4C7 /* CustomAlertViewController.swift */; };
+		BD209ABD2A609EA70098E4C7 /* CustomAlertViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209ABC2A609EA70098E4C7 /* CustomAlertViewController2.swift */; };
 		BDB307842A5DF31B007FEA10 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307832A5DF31B007FEA10 /* ProductListViewController.swift */; };
 		BDB307862A5DF393007FEA10 /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307852A5DF393007FEA10 /* ProductCategory.swift */; };
 		BDB307892A5DF43B007FEA10 /* ConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307882A5DF43B007FEA10 /* ConfigCell.swift */; };
@@ -167,6 +169,8 @@
 		BD209AB42A608A740098E4C7 /* UserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		BD209AB62A608C3F0098E4C7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BD209AB82A6093010098E4C7 /* GBShopStandartTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopStandartTextField.swift; sourceTree = "<group>"; };
+		BD209ABA2A609E720098E4C7 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		BD209ABC2A609EA70098E4C7 /* CustomAlertViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController2.swift; sourceTree = "<group>"; };
 		BDB307832A5DF31B007FEA10 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		BDB307852A5DF393007FEA10 /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		BDB307882A5DF43B007FEA10 /* ConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCell.swift; sourceTree = "<group>"; };
@@ -568,6 +572,8 @@
 				BDE64D622A3221490041420C /* Environments */,
 				BDE64D632A3221780041420C /* Resources */,
 				BDE64D542A3220400041420C /* Store.xcdatamodeld */,
+				BD209ABA2A609E720098E4C7 /* CustomAlertViewController.swift */,
+				BD209ABC2A609EA70098E4C7 /* CustomAlertViewController2.swift */,
 			);
 			path = GBShop;
 			sourceTree = "<group>";
@@ -882,6 +888,7 @@
 				BDB3078C2A5DF47D007FEA10 /* ProductListCollectionViewCell.swift in Sources */,
 				BDDC013F2A3B5AB700E9EB4D /* Registration.swift in Sources */,
 				BDB307902A5DF51B007FEA10 /* CustomGradientView.swift in Sources */,
+				BD209ABB2A609E720098E4C7 /* CustomAlertViewController.swift in Sources */,
 				BDDC015F2A3B613E00E9EB4D /* RequestRouter.swift in Sources */,
 				BDE64D4C2A3220400041420C /* AppDelegate.swift in Sources */,
 				BDE64D4E2A3220400041420C /* SceneDelegate.swift in Sources */,
@@ -889,6 +896,7 @@
 				BDB307862A5DF393007FEA10 /* ProductCategory.swift in Sources */,
 				BDDC01472A3B5C3200E9EB4D /* UpdateUserRequestFactory.swift in Sources */,
 				BD0278392A5C53BE0058A038 /* ProfileEditorViewController.swift in Sources */,
+				BD209ABD2A609EA70098E4C7 /* CustomAlertViewController2.swift in Sources */,
 				BDDC015D2A3B612000E9EB4D /* ErrorParser.swift in Sources */,
 				BDDC014B2A3B5CA100E9EB4D /* LoginResult.swift in Sources */,
 				BDE64D562A3220400041420C /* Store.xcdatamodeld in Sources */,

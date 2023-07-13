@@ -23,46 +23,6 @@ class RegistrationViewController: UIViewController {
         return label
     }()
 
-    private var usernameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Name"
-        label.font = UIFont(name: "Helvetica", size: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    private var emailLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Email"
-        label.font = UIFont(name: "Helvetica", size: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    private var passwordLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Password"
-        label.font = UIFont(name: "Helvetica", size: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    private var creditCardLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Credit card"
-        label.font = UIFont(name: "Helvetica", size: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    private var bioLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Bio"
-        label.font = UIFont(name: "Helvetica", size: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
     private var genderLabel: UILabel = {
         let label = UILabel()
         label.text = "Gender"
@@ -135,41 +95,17 @@ extension RegistrationViewController {
     }
 
     private func setupStackView() {
-        let usernameStackView = UIStackView(arrangedSubviews: [usernameLabel, usernameTextField])
-        usernameStackView.axis = .vertical
-        usernameStackView.distribution = .fill
-        usernameStackView.spacing = 10
-
-        let emailStackView = UIStackView(arrangedSubviews: [emailLabel, emailTextField])
-        emailStackView.axis = .vertical
-        emailStackView.distribution = .fill
-        emailStackView.spacing = 10
-
-        let passwordStackView = UIStackView(arrangedSubviews: [passwordLabel, passwordTextField])
-        passwordStackView.axis = .vertical
-        passwordStackView.distribution = .fill
-        passwordStackView.spacing = 10
-
-        let creditCardStackView = UIStackView(arrangedSubviews: [creditCardLabel, creditCardTextField])
-        creditCardStackView.axis = .vertical
-        creditCardStackView.distribution = .fill
-        creditCardStackView.spacing = 10
-
-        let bioStackView = UIStackView(arrangedSubviews: [bioLabel, bioTextField])
-        bioStackView.axis = .vertical
-        bioStackView.distribution = .fill
-        bioStackView.spacing = 10
-
+      
         let genderStackView = UIStackView(arrangedSubviews: [genderLabel, genderSegmentedControl])
         genderStackView.axis = .vertical
         genderStackView.distribution = .fill
         genderStackView.spacing = 10
-
-        let stackView = UIStackView(arrangedSubviews: [usernameStackView,
-                                                       emailStackView,
-                                                       passwordStackView,
-                                                       creditCardStackView,
-                                                       bioStackView,
+        
+        let stackView = UIStackView(arrangedSubviews: [usernameTextField,
+                                                             emailTextField,
+                                                             passwordTextField,
+                                                             creditCardTextField,
+                                                             bioTextField,
                                                        genderStackView])
         stackView.axis = .vertical
         stackView.distribution = .fill
