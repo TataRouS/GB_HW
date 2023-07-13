@@ -41,32 +41,32 @@ class ProfileEditorViewController: UIViewController {
 
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = Colors.whiteColor
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
+            scrollView.backgroundColor = Colors.whiteColor
+            scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Geeza Pro Bold", size: 40)
-        label.translatesAutoresizingMaskIntoConstraints = false
+            label.font = UIFont(name: "Geeza Pro Bold", size: 40)
+            label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private let genderLabel: UILabel = {
         let label = UILabel()
-        label.text = "Gender"
-        label.font = UIFont(name: "Helvetica", size: 25)
-        label.translatesAutoresizingMaskIntoConstraints = false
+            label.text = "Gender"
+            label.font = UIFont(name: "Helvetica", size: 25)
+            label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    private let genderSegmentedControl = UISegmentedControl(first: "Male",
-                                                            second: "Female",
-                                                            third: "Another")
-    private let submitButton = UIButton(title: nil,
-                                        backgroundColor: Colors.mainBlueColor,
-                                        titleColor: .white)
+    private let genderSegmentedControl = ExtendedSegmentedControl(first: "Male",
+                                                                  second: "Female",
+                                                                  third: "Another")
+    private let submitButton = ExtendedButton(title: nil,
+                                              backgroundColor: Colors.mainBlueColor,
+                                              titleColor: .white)
     private let closeButton = UIButton()
     private let activityView = UIActivityIndicatorView()
 
