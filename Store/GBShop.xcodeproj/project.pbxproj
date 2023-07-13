@@ -58,6 +58,10 @@
 		BD209AA92A606E920098E4C7 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AA82A606E920098E4C7 /* OneLineTextField.swift */; };
 		BD209AAB2A607AE30098E4C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AAA2A607AE30098E4C7 /* LoginViewController.swift */; };
 		BD209AAD2A6087F40098E4C7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AAC2A6087F40098E4C7 /* RegistrationViewController.swift */; };
+		BD209AAF2A6089D50098E4C7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AAE2A6089D50098E4C7 /* MainTabBarController.swift */; };
+		BD209AB12A608A280098E4C7 /* Test2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AB02A608A280098E4C7 /* Test2ViewController.swift */; };
+		BD209AB32A608A3B0098E4C7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AB22A608A3B0098E4C7 /* TestViewController.swift */; };
+		BD209AB52A608A740098E4C7 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AB42A608A740098E4C7 /* UserInformationViewController.swift */; };
 		BDB307842A5DF31B007FEA10 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307832A5DF31B007FEA10 /* ProductListViewController.swift */; };
 		BDB307862A5DF393007FEA10 /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307852A5DF393007FEA10 /* ProductCategory.swift */; };
 		BDB307892A5DF43B007FEA10 /* ConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307882A5DF43B007FEA10 /* ConfigCell.swift */; };
@@ -157,6 +161,10 @@
 		BD209AA82A606E920098E4C7 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		BD209AAA2A607AE30098E4C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BD209AAC2A6087F40098E4C7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		BD209AAE2A6089D50098E4C7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		BD209AB02A608A280098E4C7 /* Test2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2ViewController.swift; sourceTree = "<group>"; };
+		BD209AB22A608A3B0098E4C7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		BD209AB42A608A740098E4C7 /* UserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		BDB307832A5DF31B007FEA10 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		BDB307852A5DF393007FEA10 /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		BDB307882A5DF43B007FEA10 /* ConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCell.swift; sourceTree = "<group>"; };
@@ -610,6 +618,10 @@
 				BD209AAA2A607AE30098E4C7 /* LoginViewController.swift */,
 				BD209AAC2A6087F40098E4C7 /* RegistrationViewController.swift */,
 				BDE64D512A3220400041420C /* Main.storyboard */,
+				BD209AAE2A6089D50098E4C7 /* MainTabBarController.swift */,
+				BD209AB02A608A280098E4C7 /* Test2ViewController.swift */,
+				BD209AB22A608A3B0098E4C7 /* TestViewController.swift */,
+				BD209AB42A608A740098E4C7 /* UserInformationViewController.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -824,6 +836,7 @@
 				BD209AA92A606E920098E4C7 /* OneLineTextField.swift in Sources */,
 				BD1053012A531088009D75F3 /* RemoveReviewRequest.swift in Sources */,
 				BD1053032A531117009D75F3 /* AddReview.swift in Sources */,
+				BD209AB12A608A280098E4C7 /* Test2ViewController.swift in Sources */,
 				BD10531D2A5725D7009D75F3 /* AddProductToBasket.swift in Sources */,
 				BDDC01452A3B5BEE00E9EB4D /* UpdateUser.swift in Sources */,
 				BDDC01512A3B5DE800E9EB4D /* RegistrationData.swift in Sources */,
@@ -838,9 +851,11 @@
 				BDDC01352A3B53E100E9EB4D /* LogoutRequestFactory.swift in Sources */,
 				BDDC014D2A3B5D7F00E9EB4D /* User.swift in Sources */,
 				BD1053052A53112F009D75F3 /* AddReviewRequestFactory.swift in Sources */,
+				BD209AAF2A6089D50098E4C7 /* MainTabBarController.swift in Sources */,
 				BD1053072A53118C009D75F3 /* AllReviews.swift in Sources */,
 				BD1052C82A489923009D75F3 /* Catalog.swift in Sources */,
 				BDDC012E2A3B4E9600E9EB4D /* Auth.swift in Sources */,
+				BD209AB52A608A740098E4C7 /* UserInformationViewController.swift in Sources */,
 				BD0278372A5C53820058A038 /* LoginViewController.swift in Sources */,
 				BDB3078E2A5DF4C4007FEA10 /* ProductListTableViewCell.swift in Sources */,
 				BD10531F2A5725F6009D75F3 /* AddProductToBasketRequestFactory.swift in Sources */,
@@ -874,6 +889,7 @@
 				BDDC014B2A3B5CA100E9EB4D /* LoginResult.swift in Sources */,
 				BDE64D562A3220400041420C /* Store.xcdatamodeld in Sources */,
 				BD209AAB2A607AE30098E4C7 /* LoginViewController.swift in Sources */,
+				BD209AB32A608A3B0098E4C7 /* TestViewController.swift in Sources */,
 				BDDC01332A3B4F4D00E9EB4D /* Logout.swift in Sources */,
 				BD1052CA2A489964009D75F3 /* CatalogRequestFactory.swift in Sources */,
 				BDDC01552A3B5E3800E9EB4D /* UserData.swift in Sources */,
