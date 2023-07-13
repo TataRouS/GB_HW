@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class OneLineTextFieldView: UIView {
-    var textfield = UITextField()
+class GBShopStandardTextField: UIView {
+    var label = UILabel()
     var bottomView = UIView()
 
     override init(frame: CGRect) {
@@ -17,34 +17,43 @@ class OneLineTextFieldView: UIView {
         setupView()
     }
 
-    convenience init(isSecured: Bool) {
+    convenience init(labelText: String, isSecured: Bool = false) {
         self.init()
 
+        label.text = labelText
         textfield.isSecureTextEntry = isSecured
         setupView()
     }
 
     func setupView() {
+        self.addSubview(label)
         self.addSubview(textfield)
         self.addSubview(bottomView)
-
+        
+        label.font = UIFont(name: "Helvetica", size: 25)
         bottomView.backgroundColor = #colorLiteral(red: 0.7810183167, green: 0.7763768435, blue: 0.7845870852, alpha: 1)
         textfield.borderStyle = .none
+        xtextfield.autocorrectionType = .no
 
         self.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
         textfield.translatesAutoresizingMaskIntoConstraints = false
         bottomView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            textfield.topAnchor.constraint(equalTo: self.topAnchor),
-            textfield.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            label.topAnchor.constraint(equalTo: self.topAnchor),
+            label.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            textfield.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 5),
             textfield.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             textfield.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-
+            textfield.heightAnchor.constraint(equalToConstant: 30),
             bottomView.topAnchor.constraint(equalTo: textfield.bottomAnchor, constant: 2),
             bottomView.leadingAnchor.constraint(equalTo: textfield.leadingAnchor),
             bottomView.trailingAnchor.constraint(equalTo: textfield.trailingAnchor),
-            bottomView.heightAnchor.constraint(equalToConstant: 1)
+            bottomView.heightAnchor.constraint(equalToConstant: 1),
+
+                      self.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor)
         ])
     }
 
