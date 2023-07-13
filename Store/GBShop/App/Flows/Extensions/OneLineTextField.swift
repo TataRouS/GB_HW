@@ -12,7 +12,6 @@ class OneLineTextField: UITextField {
     init(isTextSecured: Bool? = false) {
         super.init(frame: .zero)
         self.borderStyle = .none
-        self.autocorrectionType = .no
         self.isSecureTextEntry = isTextSecured ?? false
         self.translatesAutoresizingMaskIntoConstraints = false
 
@@ -21,9 +20,7 @@ class OneLineTextField: UITextField {
         bottomView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(bottomView)
 
-        self.keyboardType = .emailAddress
-
-        NSLayoutConstraint.activate([
+    NSLayoutConstraint.activate([
             bottomView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 2),
             bottomView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             bottomView.trailingAnchor.constraint(equalTo: self.trailingAnchor),

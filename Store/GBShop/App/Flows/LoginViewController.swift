@@ -140,7 +140,7 @@ extension LoginViewController {
 
     private func setupButtons() {
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-              registrationButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        registrationButton.addTarget(self, action: #selector(registrationButtonTapped), for: .touchUpInside)
           }
 
           @objc private func loginButtonTapped() {
@@ -152,6 +152,10 @@ extension LoginViewController {
 
           @objc private func registrationButtonTapped() {
               let toVC = RegistrationViewController()
+              toVC.isRegistration = true
+                    toVC.onCompletion = {
+                        print("registration")
+                    }
               navigationController?.pushViewController(toVC, animated: true)
 
 // MARK: - Setup observers and gestures recognizer

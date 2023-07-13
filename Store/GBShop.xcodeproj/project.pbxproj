@@ -62,6 +62,7 @@
 		BD209AB12A608A280098E4C7 /* Test2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AB02A608A280098E4C7 /* Test2ViewController.swift */; };
 		BD209AB32A608A3B0098E4C7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AB22A608A3B0098E4C7 /* TestViewController.swift */; };
 		BD209AB52A608A740098E4C7 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AB42A608A740098E4C7 /* UserInformationViewController.swift */; };
+		BD209AB72A608C3F0098E4C7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD209AB62A608C3F0098E4C7 /* Colors.swift */; };
 		BDB307842A5DF31B007FEA10 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307832A5DF31B007FEA10 /* ProductListViewController.swift */; };
 		BDB307862A5DF393007FEA10 /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307852A5DF393007FEA10 /* ProductCategory.swift */; };
 		BDB307892A5DF43B007FEA10 /* ConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB307882A5DF43B007FEA10 /* ConfigCell.swift */; };
@@ -165,6 +166,7 @@
 		BD209AB02A608A280098E4C7 /* Test2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2ViewController.swift; sourceTree = "<group>"; };
 		BD209AB22A608A3B0098E4C7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		BD209AB42A608A740098E4C7 /* UserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
+		BD209AB62A608C3F0098E4C7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BDB307832A5DF31B007FEA10 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		BDB307852A5DF393007FEA10 /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		BDB307882A5DF43B007FEA10 /* ConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCell.swift; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 				BDE64D622A3221490041420C /* Environments */,
 				BDE64D632A3221780041420C /* Resources */,
 				BDE64D542A3220400041420C /* Store.xcdatamodeld */,
+				BD209AB62A608C3F0098E4C7 /* Colors.swift */,
 			);
 			path = GBShop;
 			sourceTree = "<group>";
@@ -858,6 +861,7 @@
 				BD209AB52A608A740098E4C7 /* UserInformationViewController.swift in Sources */,
 				BD0278372A5C53820058A038 /* LoginViewController.swift in Sources */,
 				BDB3078E2A5DF4C4007FEA10 /* ProductListTableViewCell.swift in Sources */,
+				BD209AB72A608C3F0098E4C7 /* Colors.swift in Sources */,
 				BD10531F2A5725F6009D75F3 /* AddProductToBasketRequestFactory.swift in Sources */,
 				BDDC01572A3B5E5E00E9EB4D /* UpdateUserResult.swift in Sources */,
 				BD1052D32A489B25009D75F3 /* CatalogProductResult.swift in Sources */,
