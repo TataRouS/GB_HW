@@ -67,7 +67,7 @@ extension LoginViewController {
         setupScrollView()
         setupAuthForm()
     }
-
+    
     private func setupScrollView() {
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
@@ -77,85 +77,57 @@ extension LoginViewController {
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-
+    
     private func setupAuthForm() {
         let loginFormStackView = UIStackView(arrangedSubviews: [loginStandardTextField,
-                                                                      passwordStandardTextField])
-              loginFormStackView.axis = .vertical
-              loginFormStackView.spacing = 10
-              loginFormStackView.translatesAutoresizingMaskIntoConstraints = false
+                                                                passwordStandardTextField])
+        loginFormStackView.axis = .vertical
+        loginFormStackView.spacing = 10
+        loginFormStackView.translatesAutoresizingMaskIntoConstraints = false
         
         let buttonsStackView = UIStackView(arrangedSubviews: [loginButton, registrationButton])
-                buttonsStackView.axis = .vertical
-                buttonsStackView.spacing = 20
-                buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
-
+        buttonsStackView.axis = .vertical
+        buttonsStackView.spacing = 20
+        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
+        
         scrollView.addSubview(logoLabel)
         scrollView.addSubview(loginFormStackView)
         scrollView.addSubview(buttonsStackView)
-
+        
         NSLayoutConstraint.activate([
             logoLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             logoLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 100),
-
+            
             loginFormStackView.topAnchor.constraint(equalTo: logoLabel.topAnchor, constant: 100),
-                      loginFormStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-                      loginFormStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-
+            loginFormStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            loginFormStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            
             buttonsStackView.topAnchor.constraint(equalTo: loginFormStackView.bottomAnchor, constant: 50),
             buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             buttonsStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
         ])
     }
-
     
-    // вынести в отдельный экстеншн
-    private func addTargetToButtons() {
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        registrationButton.addTarget(self, action: #selector(registrationButtonTapped), for: .touchUpInside)
-          }
-
-          @objc private func loginButtonTapped() {
-              guard let login = loginStandardTextField.textfield.text,
-                            let password = passwordStandardTextField.textfield.text
-              else {
-             //            presentGBShopInfoAlert()
-                         return
-                     }
-
-                      let auth = requestFactory.makeAuthRequestFactory()
-                      auth.login(userName: login, password: password) { response in
-                          switch response.result {
-                          case .success(_):
-                              //вынести в отдельную приватную функцию presentMainTabBar
-                              DispatchQueue.main.async {
+    private func presentGBShopInfoAlert() {
+        DispatchQueue.main.async {
+            let toVC = GBShopInfoAlert(title: "Warning",
+                                       text: "Login or password is wrong")
+            toVC.modalPresentationStyle = .overCurrentContext
+            toVC.modalTransitionStyle = .crossDissolve
+            self.present(toVC, animated: true, completion: nil)
+        }
+    }
     
-                                  let toVC = MainTabBarController()
-                                  toVC.modalTransitionStyle = .flipHorizontal
-                                  toVC.modalPresentationStyle = .fullScreen
-                                  self.present(toVC, animated: true, completion: nil)
-                              }
-                          case .failure(_):
-                              //вынести в отдельную приватную функцию presentGBShopInfoAlert
-                              DispatchQueue.main.async {
-                                  let toVC = GBShopInfoAlert(title: "Warning",
-                                                                        text: "Login or password is wrong")
-                                  toVC.modalPresentationStyle = .overCurrentContext
-                                  toVC.modalTransitionStyle = .crossDissolve
-                                  self.present(toVC, animated: true, completion: nil)
-                              }
-                          }
-                      }
-          }
-
-          @objc private func registrationButtonTapped() {
-              let toVC = ProfileEditorViewController()
-              toVC.isRegistration = true
-                    toVC.onCompletion = {
-                        print("registration")
-                    }
-              navigationController?.pushViewController(toVC, animated: true)
+    private func presentGBShopInfoAlert() {
+        DispatchQueue.main.async {
+            let toVC = GBShopInfoAlert(title: "Warning",
+                                       text: "Login or password is wrong")
+            toVC.modalPresentationStyle = .overCurrentContext
+            toVC.modalTransitionStyle = .crossDissolve
+            self.present(toVC, animated: true, completion: nil)
+        }
+    }}
 
 // MARK: - Setup observers and gestures recognizer
 extension LoginViewController {
@@ -208,3 +180,61 @@ extension LoginViewController {
         scrollView.endEditing(true)
     }
 }
+
+// MARK: - Setup targets
+extension LoginViewController {
+    private func addTargetToButtons() {
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        registrationButton.addTarget(self, action: #selector(registrationButtonTapped), for: .touchUpInside)
+    }
+
+    @objc private func loginButtonTapped() {
+        guard let login = loginStandardTextField.textfield.text,
+              let password = passwordStandardTextField.textfield.text,
+              loginStandardTextField.textfield.text != "",
+              passwordStandardTextField.textfield.text != ""
+        else {
+            presentGBShopInfoAlert()
+            return
+        }
+
+        let auth = requestFactory.makeAuthRequestFactory()
+        auth.login(userName: login, password: password) { response in
+            switch response.result {
+            case .success(_):
+                self.presentMainTabBar()
+            case .failure(_):
+                self.presentGBShopInfoAlert()
+            }
+        }
+    }
+
+    @objc private func registrationButtonTapped() {
+        let toVC = ProfileEditorViewController()
+        toVC.isRegistration = true
+        toVC.onCompletion = {
+            print("registration")
+        }
+        navigationController?.pushViewController(toVC, animated: true)
+    }
+}
+
+
+/*
+ let registration = requestFactory.makeRegistrationRequestFactory()
+                 let registrationData = RegistrationData(id: 123,
+                                                         username: "Somebody",
+                                                         password: "mypassword",
+                                                         email: "some@some.ru",
+                                                         gender: Gender.man.rawValue,
+                                                         creditCard: "9872389-2424-234224-234",
+                                                         bio: "This is good! I think I will switch to another language")
+                 registration.register(registrationData: registrationData) { response in
+                     switch response.result {
+                     case .success(let result):
+                         print(result)
+                     case .failure(let error):
+                         print(error.localizedDescription)
+                     }
+                 }
+ */
