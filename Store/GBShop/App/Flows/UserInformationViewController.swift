@@ -137,7 +137,6 @@ extension UserInformationViewController {
         creditCardStackView.axis = .horizontal
         creditCardStackView.spacing = 2
         creditCardStackView.distribution = .fill
-        creditCardStackView.isBaselineRelativeArrangement = true
         
         let stackView = UIStackView(arrangedSubviews: [emailLabel,
                                                        genderLabel,
