@@ -135,13 +135,12 @@ extension LoginViewController {
             toVC.modalTransitionStyle = .crossDissolve
             self.present(toVC, animated: true, completion: nil)
         }
-    }
 
- /*private func pushProfileEditorViewController() {
+ private func pushProfileEditorViewController() {
         let toVC = ProfileEditorViewController()
         toVC.isRegistration = true
         self.navigationController?.pushViewController(toVC, animated: true)
-    } */
+    }
 }
 
     

@@ -189,11 +189,11 @@ extension UserInformationViewController {
         @objc func rightButtonItemTapped() {
             let toVC = ProfileEditorViewController()
             toVC.isRegistration = false
-            toVC.onCompletion = {
-                print("setup")
-            }
-            toVC.modalPresentationStyle = .automatic
-            toVC.modalTransitionStyle = .coverVertical
+//            toVC.onCompletion = {
+//                print("setup")
+//            }
+        toVC.modalPresentationStyle = .automatic
+           toVC.modalTransitionStyle = .coverVertical
             present(toVC, animated: true, completion: nil)
         }
 }
