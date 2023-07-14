@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CustomAlertViewController2: UIViewController {
+class GBShopInfoAlert: UIViewController {
     var blurView = UIVisualEffectView()
     let alertView = UIView()
     let titleLabel = UILabel()

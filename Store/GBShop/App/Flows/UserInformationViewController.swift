@@ -187,7 +187,7 @@ extension UserInformationViewController {
         }
 
         @objc func rightButtonItemTapped() {
-            let toVC = RegistrationViewController()
+            let toVC = ProfileEditorViewController()
             toVC.isRegistration = false
             toVC.onCompletion = {
                 print("setup")
