@@ -17,7 +17,7 @@ class UserInformationViewController: UIViewController {
 
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .white
+        scrollView.backgroundColor = Colors.whiteColor
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
@@ -46,16 +46,9 @@ class UserInformationViewController: UIViewController {
         return label
     }()
 
-    private var creditCardLabel: UILabel = {
+    private var bioCardLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Helvetica", size: 20)
-        label.numberOfLines = 0
-        return label
-    }()
-
-    private var bioLabel: UILabel = {
-        let label = UILabel()
-       label.font = UIFont(name: "Helvetica", size: 20)
         label.numberOfLines = 0
         return label
     }()
@@ -67,29 +60,35 @@ class UserInformationViewController: UIViewController {
         return label
     }()
 
-//    init(userName: String,
-//         email: String,
-//         creditCard: String,
-//         bio: String,
-//         gender: String) {
-//        self.username = userName
-//        self.email = userName
-//        self.creditCard = userName
-//        self.bio = userName
-//        self.gender = userName
-//
-//        usernameLabel.text = "Name - \(userName)"
-//        emailLabel.text = "Email - \(email)"
-//        creditCardLabel.text = "Credit card - \(creditCard)"
-//        bioLabel.text = "Bio - \(bio)"
-//        genderLabel.text = "Gender -\(gender)"
-//        super.init(nibName: nil, bundle: nil)
-//    }
+    private var creditLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Credit card -"
+        label.font = UIFont(name: "Helvetica", size: 20)
+        label.numberOfLines = 0
+        return label
+    }()
     
+    private var creditCardDetailsLabel: BlurredLabel = {
+         let label = BlurredLabel()
+         label.font = UIFont(name: "Helvetica", size: 20)
+         label.numberOfLines = 0
+         return label
+     }()
+
+     private var blurButton: UIButton = {
+         let button = UIButton()
+         button.setImage(UIImage(systemName: "eye"), for: .normal)
+         button.translatesAutoresizingMaskIntoConstraints = false
+         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+         button.widthAnchor.constraint(equalToConstant: 40).isActive = true
+         return button
+     }()
+
     override func viewDidLoad() {
-        super.viewDidLoad()
-        addTextToLabel()
-    }
+           super.viewDidLoad()
+           addTextToLabel()
+           setupBlurButton()
+       }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -99,9 +98,9 @@ class UserInformationViewController: UIViewController {
     private func addTextToLabel() {
         usernameLabel.text = "\(username ?? "Nata Kuznetsova")"
         emailLabel.text = "Email - \(email ?? "geekbrains@gb.ru")"
-                creditCardLabel.text = "Credit card - \(creditCard ?? "123-12-12-12345")"
                 bioLabel.text = "Bio - \(bio ?? "bio - my name's Nata. i love this application, it's really" )
                 genderLabel.text = "Gender -\(gender ?? "female")"
+        creditCardDetailsLabel.text = "\(creditCard ?? "123-12-12-12345")"
     }
 }
 
@@ -120,20 +119,6 @@ extension UserInformationViewController {
          navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(rightButtonItemTapped))
      }
 
-     @objc func leftButtonItemTapped() {
-         dismiss(animated: true, completion: nil)
-     }
-
-     @objc func rightButtonItemTapped() {
-         let toVC = RegistrationViewController()
-         toVC.isRegistration = false
-         toVC.onCompletion = {
-             print("setup")
-         }
-         toVC.modalPresentationStyle = .automatic
-         toVC.modalTransitionStyle = .coverVertical
-         present(toVC, animated: true, completion: nil)
-
     private func setupScrollView() {
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
@@ -145,10 +130,19 @@ extension UserInformationViewController {
     }
 
     private func setupStackView() {
+        
+        let creditCardStackView = UIStackView(arrangedSubviews: [creditCardLabel,
+                                                                 creditCardDetailsLabel,
+                                                                 blurButton])
+        creditCardStackView.axis = .horizontal
+        creditCardStackView.spacing = 2
+        creditCardStackView.distribution = .fill
+        creditCardStackView.isBaselineRelativeArrangement = true
+        
         let stackView = UIStackView(arrangedSubviews: [emailLabel,
-                                                       creditCardLabel,
-                                                       bioLabel,
-                                                       genderLabel])
+                                                       genderLabel,
+                                                       genderLabel,
+                                                       creditCardStackView])
         stackView.axis = .vertical
         stackView.alignment = .leading
         stackView.spacing = 30
@@ -173,4 +167,34 @@ extension UserInformationViewController {
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
         ])
     }
+    
+    private func setupBlurButton() {
+           blurButton.addTarget(self,
+                                action: #selector(blurCreditCard),
+                                for: .touchUpInside)
+       }
+    
+    @objc func blurCreditCard(_ sender: UIButton) {
+            creditCardDetailsLabel.isBlurring.toggle()
+            if creditCardDetailsLabel.isBlurring {
+                sender.setImage(UIImage(systemName: "eye"), for: .normal)
+            } else {
+                sender.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+            }
+        }
+
+        @objc func leftButtonItemTapped() {
+            dismiss(animated: true, completion: nil)
+        }
+
+        @objc func rightButtonItemTapped() {
+            let toVC = RegistrationViewController()
+            toVC.isRegistration = false
+            toVC.onCompletion = {
+                print("setup")
+            }
+            toVC.modalPresentationStyle = .automatic
+            toVC.modalTransitionStyle = .coverVertical
+            present(toVC, animated: true, completion: nil)
+        }
 }
