@@ -8,5 +8,5 @@
 import Foundation
 
 struct ProductCategory {
-    static let productCategories = ["Develop", "Testing", "Desing", "Manage"]
+    static let productCategories = ["Develop", "Testing", "Design", "Manage"]
 }

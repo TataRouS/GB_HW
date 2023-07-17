@@ -33,7 +33,7 @@ class GBShopStandardTextField: UIView {
         label.font = UIFont(name: "Helvetica", size: 25)
         bottomView.backgroundColor = #colorLiteral(red: 0.7810183167, green: 0.7763768435, blue: 0.7845870852, alpha: 1)
         textfield.borderStyle = .none
-        xtextfield.autocorrectionType = .no
+        textfield.autocorrectionType = .no
 
         self.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -16,7 +16,7 @@ class DeleteProductFromBasketTests: XCTestCase {
 
     override func setUpWithError() throws {
         requestFactory = RequestFactory()
-        deleteProductFromBasket = requestFactory.makeDeleteProductFromBasket()
+        deleteProductFromBasket = requestFactory.makeDeleteProductFromBasketRequestFactory()
     }
 
     override func tearDownWithError() throws {
@@ -33,5 +33,6 @@ class DeleteProductFromBasketTests: XCTestCase {
             }
             self.expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 10.0)
     }
 }

@@ -22,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                window?.windowScene = windowScene
                 let rootVC = LoginViewController()
                 let navigationVC = UINavigationController(rootViewController: rootVC)
-                window?.rootViewController = navigationVC
+               window?.rootViewController = navigationVC
+       // window?.rootViewController = ProductReviewsViewController()
                window?.makeKeyAndVisible()
         
     }

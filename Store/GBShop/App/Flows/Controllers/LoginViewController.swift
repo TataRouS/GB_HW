@@ -25,6 +25,8 @@ class LoginViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    private let activityView = UIActivityIndicatorView()
 
     private let loginButton = ExtendedButton(title: "Log in",
                                        backgroundColor: Colors.whiteColor,
@@ -112,11 +114,25 @@ extension LoginViewController {
     }
 
     private func setupActivityView() {
-        activityView.center = view.center
-        activityView.color = Colors.mainBlueColor
-        activityView.style = .large
-        view.addSubview(activityView)
-    }
+           activityView.center = view.center
+           activityView.color = Colors.mainBlueColor
+           activityView.style = .large
+           view.addSubview(activityView)
+       }
+
+       private func startActivityViewAnimating() {
+           DispatchQueue.main.async {
+               self.activityView.isHidden = false
+               self.activityView.startAnimating()
+           }
+       }
+
+       private func stopActivityAnimating() {
+           DispatchQueue.main.async {
+               self.activityView.isHidden = true
+               self.activityView.stopAnimating()
+           }
+       }
 
     private func presentMainTabBar() {
         DispatchQueue.main.async {

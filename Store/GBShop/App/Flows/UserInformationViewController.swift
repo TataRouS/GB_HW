@@ -5,7 +5,6 @@
 //  Created by Nata Kuznetsova on 13.07.2023.
 //
 
-import Foundation
 import UIKit
 
 class UserInformationViewController: UIViewController {
@@ -41,12 +40,12 @@ class UserInformationViewController: UIViewController {
 
     private var emailLabel: UILabel = {
         let label = UILabel()
-       label.font = UIFont(name: "Helvetica", size: 20)
+        label.font = UIFont(name: "Helvetica", size: 20)
         label.numberOfLines = 0
         return label
     }()
 
-    private var bioCardLabel: UILabel = {
+    private var bioLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Helvetica", size: 20)
         label.numberOfLines = 0
@@ -55,51 +54,47 @@ class UserInformationViewController: UIViewController {
 
     private var genderLabel: UILabel = {
         let label = UILabel()
-       label.font = UIFont(name: "Helvetica", size: 20)
+        label.font = UIFont(name: "Helvetica", size: 20)
         label.numberOfLines = 0
         return label
     }()
 
-    private var creditLabel: UILabel = {
+    private var creditCardLabel: UILabel = {
         let label = UILabel()
         label.text = "Credit card -"
         label.font = UIFont(name: "Helvetica", size: 20)
         label.numberOfLines = 0
         return label
     }()
-    
-    private var creditCardDetailsLabel: BlurredLabel = {
-         let label = BlurredLabel()
-         label.font = UIFont(name: "Helvetica", size: 20)
-         label.numberOfLines = 0
-         return label
-     }()
 
-     private var blurButton: UIButton = {
-         let button = UIButton()
-         button.setImage(UIImage(systemName: "eye"), for: .normal)
-         button.translatesAutoresizingMaskIntoConstraints = false
-         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
-         button.widthAnchor.constraint(equalToConstant: 40).isActive = true
-         return button
-     }()
+    private var creditCardDetailsLabel: BlurredLabel = {
+        let label = BlurredLabel()
+        label.font = UIFont(name: "Helvetica", size: 20)
+        label.numberOfLines = 0
+        return label
+    }()
+
+    private var blurButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "eye"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        return button
+    }()
 
     override func viewDidLoad() {
-           super.viewDidLoad()
-           addTextToLabel()
-           setupBlurButton()
-       }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+        super.viewDidLoad()
+        addTextToLabel()
         setupViews()
+        setupBlurButton()
     }
 
     private func addTextToLabel() {
         usernameLabel.text = "\(username ?? "Nata Kuznetsova")"
         emailLabel.text = "Email - \(email ?? "geekbrains@gb.ru")"
-                bioLabel.text = "Bio - \(bio ?? "bio - my name's Nata. i love this application, it's really" )
-                genderLabel.text = "Gender -\(gender ?? "female")"
+        bioLabel.text = "Bio - \(bio ?? " My name's Nata Kuznetsova. i love thid application, it's really usefull")"
+        genderLabel.text = "Gender -\(gender ?? "Female")"
         creditCardDetailsLabel.text = "\(creditCard ?? "123-12-12-12345")"
     }
 }
@@ -108,42 +103,40 @@ class UserInformationViewController: UIViewController {
 extension UserInformationViewController {
     private func setupViews() {
         setupScrollView()
-        setupStackView()
-    setupNavigationView()
-     }
+        setupUserInformation()
+        setupNavigationView()
+    }
 
-     private func setupNavigationView() {
-         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Exit", style: .done, target: self, action: #selector(leftButtonItemTapped))
-         navigationItem.leftBarButtonItem?.tintColor = .red
+    private func setupNavigationView() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Exit", style: .done, target: self, action: #selector(leftButtonItemTapped))
+        navigationItem.leftBarButtonItem?.tintColor = .red
 
-         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(rightButtonItemTapped))
-     }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(rightButtonItemTapped))
+    }
 
     private func setupScrollView() {
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 
-    private func setupStackView() {
-        
+    private func setupUserInformation() {
         let creditCardStackView = UIStackView(arrangedSubviews: [creditCardLabel,
                                                                  creditCardDetailsLabel,
                                                                  blurButton])
         creditCardStackView.axis = .horizontal
         creditCardStackView.spacing = 2
         creditCardStackView.distribution = .fill
-        
+
         let stackView = UIStackView(arrangedSubviews: [emailLabel,
-                                                       genderLabel,
+                                                       bioLabel,
                                                        genderLabel,
                                                        creditCardStackView])
         stackView.axis = .vertical
-        stackView.alignment = .leading
         stackView.spacing = 30
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -166,34 +159,34 @@ extension UserInformationViewController {
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
         ])
     }
-    
-    private func setupBlurButton() {
-           blurButton.addTarget(self,
-                                action: #selector(blurCreditCard),
-                                for: .touchUpInside)
-       }
-    
-    @objc func blurCreditCard(_ sender: UIButton) {
-            creditCardDetailsLabel.isBlurring.toggle()
-            if creditCardDetailsLabel.isBlurring {
-                sender.setImage(UIImage(systemName: "eye"), for: .normal)
-            } else {
-                sender.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-            }
-        }
 
-        @objc func leftButtonItemTapped() {
-            dismiss(animated: true, completion: nil)
-        }
+    @objc func leftButtonItemTapped() {
+        dismiss(animated: true, completion: nil)
+    }
 
-        @objc func rightButtonItemTapped() {
-            let toVC = ProfileEditorViewController()
-            toVC.isRegistration = false
-//            toVC.onCompletion = {
-//                print("setup")
-//            }
+    @objc func rightButtonItemTapped() {
+        let toVC = ProfileEditorViewController()
+        toVC.isRegistration = false
         toVC.modalPresentationStyle = .automatic
-           toVC.modalTransitionStyle = .coverVertical
-            present(toVC, animated: true, completion: nil)
+        toVC.modalTransitionStyle = .coverVertical
+        present(toVC, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Setup targets
+extension UserInformationViewController {
+    private func setupBlurButton() {
+        blurButton.addTarget(self,
+                             action: #selector(blurCreditCard),
+                             for: .touchUpInside)
+    }
+
+    @objc func blurCreditCard(_ sender: UIButton) {
+        creditCardDetailsLabel.isBlurring.toggle()
+        if creditCardDetailsLabel.isBlurring {
+            sender.setImage(UIImage(systemName: "eye"), for: .normal)
+        } else {
+            sender.setImage(UIImage(systemName: "eye.slash"), for: .normal)
         }
+    }
 }

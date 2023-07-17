@@ -9,5 +9,8 @@ import Foundation
 import Alamofire
 
 protocol CatalogRequestFactory {
-    func getCatalog(pageNumber: Int, categoryId: Int, completionHandler: @escaping (AFDataResponse<[CatalogProductResult]>) -> Void)
+    func getCatalog(pageNumber: Int,
+                    categoryId: Int,
+                    category: String,
+                    completionHandler: @escaping (AFDataResponse<[CatalogProductResult]>) -> Void)
 }
