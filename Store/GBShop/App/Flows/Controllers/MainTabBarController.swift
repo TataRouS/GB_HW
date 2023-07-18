@@ -25,7 +25,7 @@ class MainTabBarController: UITabBarController {
         viewControllers = [generateNavigationController(rootViewController: userInformationViewController,
                                                         title: "Info",
                                                         image: infoImage!),
-                           generateNavigationController(rootViewController: productListViewController,
+                           generateNavigationController(rootViewController:  productListViewController,
                                                         title: "Products",
                                                         image: productImage!)]
     }

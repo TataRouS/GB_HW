@@ -30,6 +30,7 @@ class AllReviewsTests: XCTestCase {
                switch response.result {
                case .success(_): break
                case .failure:
+                  print("Warning allreview")
                    XCTFail()
             }
             self.expectation.fulfill()
