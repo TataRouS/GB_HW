@@ -11,7 +11,7 @@ struct AllReviewsResult: Codable {
     let idReview: Int
     let idProduct: Int
     let text: String
-    let user: Int
+    let user: User
     let errorMessage: String?
 
     enum CodingKeys: String, CodingKey {

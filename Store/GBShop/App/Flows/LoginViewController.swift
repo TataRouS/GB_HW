@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  GBShop
 //
-//  Created by Nata Kuznetsova on 10.07.2023.
+//  Created by Nata Kuznetsova on 13.07.2023.
 //
 
 import UIKit
@@ -25,17 +25,15 @@ class LoginViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    private let activityView = UIActivityIndicatorView()
 
     private let loginButton = ExtendedButton(title: "Log in",
-                                       backgroundColor: Colors.whiteColor,
-                                       titleColor: .black,
-                                       isShadow: true)
+                                             backgroundColor: Colors.whiteColor,
+                                             titleColor: .black,
+                                             isShadow: true)
     private let registrationButton = ExtendedButton(title: "Sign up",
-                                              backgroundColor: Colors.mainBlueColor,
-                                              titleColor: Colors.whiteColor,
-                                              isShadow: false)
+                                                    backgroundColor: Colors.mainBlueColor,
+                                                    titleColor: Colors.whiteColor,
+                                                    isShadow: false)
 
     private let loginStandardTextField = GBShopStandardTextField(labelText: "Login")
     private let passwordStandardTextField = GBShopStandardTextField(labelText: "Password",
@@ -114,25 +112,11 @@ extension LoginViewController {
     }
 
     private func setupActivityView() {
-           activityView.center = view.center
-           activityView.color = Colors.mainBlueColor
-           activityView.style = .large
-           view.addSubview(activityView)
-       }
-
-       private func startActivityViewAnimating() {
-           DispatchQueue.main.async {
-               self.activityView.isHidden = false
-               self.activityView.startAnimating()
-           }
-       }
-
-       private func stopActivityAnimating() {
-           DispatchQueue.main.async {
-               self.activityView.isHidden = true
-               self.activityView.stopAnimating()
-           }
-       }
+        activityView.center = view.center
+        activityView.color = Colors.mainBlueColor
+        activityView.style = .large
+        view.addSubview(activityView)
+    }
 
     private func presentMainTabBar() {
         DispatchQueue.main.async {
@@ -151,15 +135,9 @@ extension LoginViewController {
             toVC.modalTransitionStyle = .crossDissolve
             self.present(toVC, animated: true, completion: nil)
         }
-
- private func pushProfileEditorViewController() {
-        let toVC = ProfileEditorViewController()
-        toVC.isRegistration = true
-        self.navigationController?.pushViewController(toVC, animated: true)
     }
 }
 
-    
 // MARK: - Setup observers and gestures recognizer
 extension LoginViewController {
     private func addTapGestureRecognizer() {
@@ -257,12 +235,12 @@ extension LoginViewController {
             self.activityView.stopAnimating()
         }
     }
-    
+
     private func pushProfileEditorViewController() {
-         let toVC = ProfileEditorViewController()
-         toVC.isRegistration = true
-         self.navigationController?.pushViewController(toVC, animated: true)
-     }
+        let toVC = ProfileEditorViewController()
+        toVC.isRegistration = true
+        self.navigationController?.pushViewController(toVC, animated: true)
+    }
 
     @objc private func registrationButtonTapped() {
         pushProfileEditorViewController()

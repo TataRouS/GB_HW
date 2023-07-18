@@ -65,7 +65,7 @@ class ProductListViewController: UIViewController {
     private func getCatalog() {
         let catalog = requestFactory.makeCatalogRequestFactory()
 
-        catalog.getCatalog(pageNumber: 1, categoryId: 1) { response in
+        catalog.getCatalog(pageNumber: 1, categoryId: 1,  category: "Develop") { response in
             switch response.result {
             case .success(let result):
                 self.products = result
@@ -147,9 +147,14 @@ extension ProductListViewController: UICollectionViewDataSource {
         productCategoryCell.configCell(with: category)
         return productCategoryCell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let toVC = CategoryProductListViewController()
+        let category = productCategories[indexPath.row]
+        toVC.category = category
+        navigationController?.pushViewController(toVC, animated: true)
     }
+
 
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         UIView.animate(withDuration: 0.1) {

@@ -26,13 +26,15 @@ class AllReviewsTests: XCTestCase {
     }
 
     func testShouldGetAllReviews() throws {
-        allReviews.getAllReviews(productId: 1) { response in
-            switch response.result {
-            case .success(_): break
-            case .failure:
-                XCTFail()
+           allReviews.getAllReviews(productId: 1) { response in
+               switch response.result {
+               case .success(_): break
+               case .failure:
+                  print("Warning allreview")
+                   XCTFail()
             }
             self.expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 10.0)
     }
 }
