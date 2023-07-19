@@ -5,7 +5,6 @@
 //  Created by Nata Kuznetsova on 11.07.2023.
 //
 
-
 import UIKit
 
 class ProductListTableViewCell: UITableViewCell, ConfigCell {

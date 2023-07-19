@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductListViewController: UIViewController {
+final class ProductListViewController: UIViewController {
     let requestFactory = RequestFactory()
 
     private var productCategories = ProductCategory.productCategories

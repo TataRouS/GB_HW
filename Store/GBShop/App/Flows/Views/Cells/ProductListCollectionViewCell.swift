@@ -41,7 +41,6 @@ class ProductListCollectionViewCell: UICollectionViewCell, ConfigCell {
         self.category = category
 
         setupViews()
-//        addAnimationToCell()
     }
 
     private func setupViews() {
