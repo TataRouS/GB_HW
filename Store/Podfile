@@ -6,6 +6,7 @@ target 'GBShop' do
   use_frameworks!
 
 pod 'Alamofire', '~> 5.7'
+pod 'Firebase/Analytics'
 
   # Pods for GBShop
 

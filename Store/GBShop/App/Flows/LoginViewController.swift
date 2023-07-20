@@ -29,17 +29,21 @@ class LoginViewController: UIViewController {
     private let loginButton = ExtendedButton(title: "Log in",
                                              backgroundColor: Colors.whiteColor,
                                              titleColor: .black,
-                                             isShadow: true)
+                                             isShadow: true,
+                                            accessibilityIdentifier: "loginButton")
     private let registrationButton = ExtendedButton(title: "Sign up",
                                                     backgroundColor: Colors.mainBlueColor,
                                                     titleColor: Colors.whiteColor,
-                                                    isShadow: false)
+                                                    isShadow: false,
+                                                    accessibilityIdentifier: "registrationButton")
 
-    private let loginStandardTextField = GBShopStandardTextField(labelText: "Login")
-    private let passwordStandardTextField = GBShopStandardTextField(labelText: "Password",
-                                                                    isSecured: true)
+    private let loginStandardTextField = GBShopStandardTextField(
+        labelText: "Login",
+        accessibilityIdentifier: "loginTF")
+    private let passwordStandardTextField = GBShopStandardTextField(
+        labelText: "Password",                                               isSecured: true,
+         accessibilityIdentifier: "passwordTF")
     private let activityView = UIActivityIndicatorView()
-
     private var isKeyboardShown = false
 
     override func viewDidLoad() {
@@ -63,7 +67,7 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: - Setup views
-privat extension LoginViewController {
+private extension LoginViewController {
      func setupViews() {
         setupScrollView()
         setupAuthForm()
@@ -141,7 +145,8 @@ privat extension LoginViewController {
 // MARK: - Setup observers and gestures recognizer
 private extension LoginViewController {
     func addTapGestureRecognizer() {
-        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self,
+                                                              action: #selector(hideKeyboard))
         scrollView.addGestureRecognizer(hideKeyboardGesture)
     }
 
@@ -194,10 +199,14 @@ private extension LoginViewController {
 
 // MARK: - Setup targets
 private extension LoginViewController {
-     func addTargetToButtons() {
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        registrationButton.addTarget(self, action: #selector(registrationButtonTapped), for: .touchUpInside)
-    }
+            func addTargetToButtons() {
+                loginButton.addTarget(self,
+                                      action: #selector(loginButtonTapped),
+                                      for: .touchUpInside)
+                registrationButton.addTarget(self,
+                                             action: #selector(registrationButtonTapped),
+                                             for: .touchUpInside)
+            }
 
     @objc func loginButtonTapped() {
         guard let login = loginStandardTextField.textfield.text,
@@ -212,7 +221,6 @@ private extension LoginViewController {
         let auth = requestFactory.makeAuthRequestFactory()
         auth.login(userName: login, password: password) { response in
             self.stopActivityAnimating()
-
             switch response.result {
             case .success(_):
                 self.presentMainTabBar()
