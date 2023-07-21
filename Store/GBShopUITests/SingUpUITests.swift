@@ -25,17 +25,13 @@ class SignUpUITests: XCTestCase {
         scrollViewQuery = nil
     }
 
-    func testExample() throws {
-
-    }
-
     func testSuccess() {
         enterSignUpData(username: "A",
                         password: "a",
                         email: "a",
                         creditCard: "a",
                         bio: "a")
-        XCTAssertFalse(app.otherElements.staticTexts["The parameters are entered incorrectly"].waitForExistence(timeout: 1.0))
+        XCTAssertFalse(app.otherElements.staticTexts["The parameters are entered incorrectly"].waitForExistence(timeout: 5.0))
     }
 
     func testFailure() {
@@ -44,7 +40,7 @@ class SignUpUITests: XCTestCase {
                         email: "a",
                         creditCard: "a",
                         bio: "a")
-        XCTAssertTrue(app.otherElements.staticTexts["The parameters are entered incorrectly"].waitForExistence(timeout: 1.0))
+        XCTAssertTrue(app.otherElements.staticTexts["The parameters are entered incorrectly"].waitForExistence(timeout: 5.0))
     }
 
     private func enterSignUpData(username: String,
