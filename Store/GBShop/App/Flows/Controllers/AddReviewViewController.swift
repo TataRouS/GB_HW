@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import FirebaseCrashlytics
+import FirebaseAnalytics
 
 class AddReviewViewController: UIViewController {
     private let requestFactory = RequestFactory()
@@ -49,9 +51,20 @@ class AddReviewViewController: UIViewController {
         addReview.getAddReview(idUser: 123, text: text) { response in
             switch response.result {
             case .success(let result):
+                let parametres = ["result": result]
+                              Analytics.logEvent("add_review_success",
+                                                 parameters: parametres)
                 print(result)
             case .failure(let error):
-                print(error.localizedDescription)
+                 let keysAndValues = [
+                    "error": error.localizedDescription,
+                    "idUser": 123,
+                    "text": text
+                ] as [String : Any]
+
+                Crashlytics.crashlytics().setCustomKeysAndValues(keysAndValues)
+                Crashlytics.crashlytics().log("post_review_in_crash")
+                fatalError(error.localizedDescription)
             }
         }
     }
