@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
+import FirebaseAnalytics
 
 class LoginViewController: UIViewController {
     let requestFactory = RequestFactory()
@@ -222,9 +224,16 @@ private extension LoginViewController {
         auth.login(userName: login, password: password) { response in
             self.stopActivityAnimating()
             switch response.result {
-            case .success(_):
+         case .success(let result):
+                let parametres = ["username": result.user.name,
+                                  "lastname": result.user.lastname,
+                                  "login": result.user.login]
+                Analytics.logEvent("log_in_succes",
+                                   parameters: parametres)
+                print("AnalyticsEventLogin")
                 self.presentMainTabBar()
-            case .failure(_):
+            case .failure(let error):
+                Crashlytics.crashlytics().record(error: error)
                 self.presentGBShopInfoAlert()
             }
         }
